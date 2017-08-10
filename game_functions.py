@@ -207,7 +207,7 @@ def ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets):
         stats.game_active = False
         pygame.mouse.set_visible(True)
 
-def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
+def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """Check if any aliens have reached the bottom of the screen """
     screen_rect = screen.get_rect()
     for alien in aliens.sprites():
@@ -232,5 +232,5 @@ def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets):
 def check_high_score(stats, sb):
     """ Check to see if there's a new high score """
     if stats.score > stats.high_score:
-        stats.high_score = stats.check_high_score
+        stats.high_score = stats.score
         sb.prep_high_score()
